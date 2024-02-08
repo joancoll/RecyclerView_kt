@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ViewHolder(private val context: Context, itemView: View) :
     RecyclerView.ViewHolder(itemView), View.OnClickListener {
-    //Getters
     //El ViewModel fa de pont amb els Views de la interficie gràfica
     //Members
     val name: TextView

@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     //member variables
-    private val items: ArrayList<Item> = ArrayList<Item>()
-    private var rv_items: RecyclerView? = null
-    private var myAdapter: CustomRecyclerView? = null
+    private val items: ArrayList<Item> = ArrayList()
+    private lateinit var rvItems: RecyclerView
+    private lateinit  var myAdapter: CustomRecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        rv_items = findViewById(R.id.rv_items)
+        rvItems = findViewById(R.id.rv_items)
     }
 
     private fun initData() {
@@ -113,14 +113,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun initDataAdapter() {
         //Creem l'adaptador
-        myAdapter = CustomRecyclerView(this, items)
+        myAdapter = CustomRecyclerView(items)
         //Establim l'adaptador i el layout manager
-        rv_items!!.adapter = myAdapter
-        rv_items!!.layoutManager = LinearLayoutManager(this)
+        rvItems.adapter = myAdapter
+        rvItems.layoutManager = LinearLayoutManager(this)
     }
 
     //Gestionem el click de l'usuari en un item del RecyclerView gràcies al ViewHolder
-    fun itemClick(view: View?, position: Int) {
+    fun itemClick(view: View, position: Int) {
         Toast.makeText(this, getString(R.string.haspressed, position), Toast.LENGTH_SHORT).show()
     }
 }

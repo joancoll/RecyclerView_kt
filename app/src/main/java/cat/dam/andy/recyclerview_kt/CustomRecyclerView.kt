@@ -1,16 +1,11 @@
 package cat.dam.andy.recyclerview_kt
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomRecyclerView    //Constructor, aquí passem els ítems que mostrarem, és a dir, el model de dades
-    (
-    context: Context?, //Aquesta classe és el nostre adaptador, és a dir, el que ens permetrà mostrar les dades
-    //Members
-    private val dataSet: ArrayList<Item>
-) :
+//Constructor, aquí passem els ítems que mostrarem, és a dir, el model de dades
+class CustomRecyclerView(private val dataSet: ArrayList<Item>) :
     RecyclerView.Adapter<ViewHolder>() {
     //Mètode que només es crida la primera vegada en crear la llista
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,10 +19,10 @@ class CustomRecyclerView    //Constructor, aquí passem els ítems que mostrarem
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         //Donem valor als views de cada card mitjançant el ViewHolder
         val item = dataSet[position]
-        viewHolder.name.setText(item.name)
-        viewHolder.desc.setText(item.description)
+        viewHolder.name.text = item.name
+        viewHolder.desc.text = item.description
         val price: String = item.price.toString() + " €"
-        viewHolder.price.setText(price)
+        viewHolder.price.text = price
         viewHolder.image.setImageResource(item.imageResourceID)
     }
 
