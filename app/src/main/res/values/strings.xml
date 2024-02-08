@@ -3,5 +3,5 @@
     <string name="demo">Demo text</string>
     <string name="image">Demo imatge</string>
     <string name="title">Demo RecyclerView</string>
-    <string name="haspressed">Has premut la posició: %1$d</string>
+    <string name="haspressed">Has premut la posició: %1$s</string>
 </resources>

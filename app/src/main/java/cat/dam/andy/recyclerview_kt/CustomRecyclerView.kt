@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 //Constructor, aquí passem els ítems que mostrarem, és a dir, el model de dades
-class CustomRecyclerView(private val dataSet: ArrayList<Item>) :
+class CustomRecyclerView(private val dataSet: List<Item>) :
     RecyclerView.Adapter<ViewHolder>() {
     //Mètode que només es crida la primera vegada en crear la llista
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
